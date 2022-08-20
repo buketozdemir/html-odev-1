@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> /*BLock elemenleti yan yana getirmek için float kullanılır.*/
+        #container {
+            background-color:burlywood;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background-color: brown;
+            float: right;
+        }
+        #box1 {
+            float: left;
+        }
+        .clearfix::after { /* clearfiix uyguladığım elementten sonra */
+            content: "";  /*içeriği boş olan block eleman bir içerik */
+            display: block; 
+            clear: both;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="container" class="clearfix"> <!-- Bu divin classı clearfix olduğu için , bu div bittikten sonra float temizlenir  -->
+        <div class="box" id="box1">Kutu 1</div>
+        <div class="box">Kutu 2</div>
+        <div class="box">Kutu 3</div>
+        <!-- <div style="clear:both;"></div>  Eğer floatı clearlamazsak tüm sayfaya hükmetmeye devam eder. Bu div in altında float temizlensin.  Bu birinci yol. -->
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima explicabo quia fugit aliquam tempora voluptatem ipsum veritatis ad. Provident atque amet recusandae alias. Repellendus ducimus, sit quo vitae dignissimos nam.</p>
+</body>
+</html>

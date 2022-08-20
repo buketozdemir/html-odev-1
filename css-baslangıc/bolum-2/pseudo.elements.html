@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-line {  /* p etkiketlerinin ilk satırı */
+            font-weight: bold;
+            color: brown;
+            word-spacing: 3px; /*kelimeler arası boşluk*/
+            letter-spacing: 2px; /*harfler arası boşluk*/
+        }
+        p.about::first-line { /*p etikelerinde classı about olanun ilk satırı yeşil yapar */
+            color: green;
+        }
+        p::first-letter{  /* p etiketlerinin ilk harfini büyütür */
+            font-size: 48px;
+        }
+        ::selection {  /* tarayıcıda yazı seçtiğimizde arka plan pembe olur*/
+            background-color: hotpink;
+        }
+        p::after{  /* p etiketinden "sonra=after" emojiyi contentle ekledik*/
+            content: '\1F308'; /*emoji kodu*/
+            font-size: 35px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+         Omnis quisquam saepe doloremque. Ex enim eligendi eum repellat rerum laborum ab m
+         olestiae sequi suscipit, officia quisquam cum quidem alias voluptatum possimus.</p>
+    <p class="about">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque quasi dolores iure corporis reiciendis, 
+        nobis ullam quaerat sapiente, vitae quos velit omnis. Ullam repudiandae necessitatibus voluptate quisquam doloribus placeat iste?</p>
+</body>
+</html>

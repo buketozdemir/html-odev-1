@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box    {   /* BLOCK : ALT ALTA , INLINE : YAN YANA  VE İÇERİK KADAR YER KAPLAR*/
+                        height: 60px;
+            width: 60px;
+            /* display: block; Tarayıcı ayarı */
+
+            /* display: inline; sadece içerisindeki eleman kadar yer kaplar hale getirir, widht ve height işe yaramaz ,
+             inline olduğu için elemanlar yan yana gelir*/
+
+            display: inline-block; /* widht ve height işe yarar hale gelir, inline olduğu için elemanlar yan yana gelir*/
+         }
+         a {
+            display: block; /* linkler alt alta gelir */
+         }
+        #first { 
+            background-color: red;
+            /* display: none;  nesneyi yok eder, diğerleri yerine kayar yer işgal etmez */
+            /* visibility:hidden;  nesneyi gizler, yer işgal etmeye devam eder, yerine boşluk bırakır */
+         } 
+        #second { background-color: green; }
+        #third { background-color: blue; }
+
+    </style>
+</head>
+<body>
+    <div id="conteiner"></div>
+     <!--display : none | inline | inline-block | block -->
+        <div class="box" id="first">First</div>
+        <div class="box" id="second">Second</div>
+        <div class="box" id="third">Third</div>
+    </div>
+    <div>
+        <a href="">Home</a>
+        <a href="">Movies</a>
+        <a href="">Content</a>
+
+    </div>
+</body>
+</html>

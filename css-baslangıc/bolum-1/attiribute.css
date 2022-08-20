@@ -1,0 +1,13 @@
+h2[title="baslik1"]{
+    color: chocolate;
+}
+p[title="paragraf1"]{
+    color: blue;
+    text-align: justify; /* her iki tarafada yaslar */
+}  
+a[target="_blank"]{
+    color: rgb(178, 230, 87);
+}
+input[type="text"]{
+    background-color: darkviolet;
+}

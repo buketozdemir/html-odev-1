@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            border: 1px solid gray;
+            padding: 5px 8px;
+            display: inline-block;
+            text-decoration: none;
+            width: 60px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        a:link { /*ziyaret edilmemiş */
+          color: red;  
+        }
+
+        a:visited { /*ziyaret edilmiş, tıklanmış  */ 
+          color: green;
+        }
+
+        a:hover { /*üzerine gelindiğinde */
+          background-color: yellow;
+          color: white;
+        }
+
+        a:active { /*üzerine gelip tıklandığı an */
+          background-color: violet;
+          color: white;
+        }
+        p{
+            display: none;
+        }
+        div:hover p {    /* div üzerine geldiğimizde none olan p etiketi block yani görünür oldu */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href="display.html">Home</a>
+    <a href="margin.html">Products</a>
+    <a href="borders.html">About</a>
+    <br><br>
+    <div>
+        Click here!
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae eos hic explicabo excepturi! Non consectetur sit saepe temporibus sequi ex et maiores laboriosam veniam? Iusto hic minima ipsam natus nemo!</p>
+    </div>
+</body>
+</html>

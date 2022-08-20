@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Sizing</title>
+    <style>
+        * {
+            box-sizing: border-box; /* normalde content box tarayıcının ootomatik halidir. Ancak sayfanın boyutunda değişiklik yapıldığında
+            bozulmaması için, yani içindeki kutuyu %100 e sığdırabilmek için border-box kullanılır*/
+        }
+        body { margin:0;}
+        #showcase {
+             background-color: #2E4C6D; 
+             height: 500px;
+             width: 100%;
+             padding: 10px;
+        }
+        #how-it-works { 
+            background-color: #FC997C; 
+            padding: 10px;
+        }
+        .main-header {
+            background-color: #FC997C;
+        }
+        .main-nav{
+            display: inline-block;
+            width: calc(100% - 80px);  /* navbarı 100% yaptığımızda yukarda a etiketiyle yan yana sığmıyorlar. 
+            Bu yüzden %100'den a etiketinin yani MovieApp in kapladığı 80px i çıkardık. 
+            Tarayıcının boyutları değişsse bile navbar hep sağda kalır. */
+            text-align: right; /*yazıyı sağa yasladık*/
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <a href="#">MovieApp</a>
+
+        <nav class="main-nav">
+            <a href="#">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="showcase">
+            <h1>Welcome to MovieApp</h1>
+        </section>
+        <section id="how-it-works">
+            <h2>How it works?</h2>
+        </section>
+    </main>
+</body>
+</html>

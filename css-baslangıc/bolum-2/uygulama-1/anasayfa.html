@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="buttons.css">
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;  /* Sayfayı yukarı çıkaran button ekledik, scroll-behavior özelliğiyşe sayfa yukarı aniden çıkmaz, yavaş yavaş basar */
+        }
+        body {
+            margin: 0;
+        }
+        .main {margin-top: 50px ;}
+        .main-header{
+            padding: 10px 16px;
+            background-color: white;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+        }
+        .header-logo{
+            width: 60px;
+        }
+        .main_title {
+            background-image: url('ot.jpg');
+            background-position: center;
+            height: 300px;
+            width: 100%;
+            color: white;
+            font-family:'Dancing Script', cursive;
+            position: relative;
+        }
+        .main_title h1{
+            margin: 0;
+            font-size: 58px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* yazı kendi genişliğinin yarısı kadar sola ve yukarı gitmiş oldu. tam ortalandı*/
+        }
+        .main-nav {
+            display: inline-block;
+            width: calc(100% - 90px);
+            text-align: right;
+            position: absolute;
+            top:20px;
+        }
+        .main-nav__item {
+            display: inline-block;
+            margin: 0;
+        }
+        .main-nav__item a{
+            text-decoration: none;
+            color: rgb(4, 87, 4);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .main-nav__items li::before {
+            content: '\1F33F';
+        }
+        .main-nav__item a:hover {
+            color: pink;
+        }
+        .main_aciklama{
+            margin: 0px;
+            padding: 10px;
+            font-family: monospace;
+            color: rgb(203, 232, 215);
+
+        }
+        .main-nav__item--login a{
+            color:white;
+            background-color: rgb(77, 109, 81);
+            padding: 4px 16px;
+            border-radius: 8px;
+            border: 3px solid white;
+        }
+        #main-welcome{
+            background-color: rgb(77, 109, 81);
+            padding: 5px;
+            text-align: center;
+            font-family: monospace;
+            color:rgb(203, 232, 215); ;
+        }
+        .col {
+            display: inline-block;
+            width: 30%;
+            padding: 16px;
+            margin: 8px;
+        }
+        .icon {
+            font-size: 50px;
+            color: coral;
+        }
+        .col-2{
+            width: calc(50% - 2px);
+            display: inline-block;
+            height: 400px;
+            background-color: coral;
+            vertical-align: top;
+        }
+        .features-left{
+            background-image: url("bitki2.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .features-right{
+            background-color: #edf5f7;
+            padding: 40px;
+            vertical-align: top;
+        }
+        .features-right h3 {
+            font-size: 30px;
+            color: rgb(77, 109, 81);
+            font-family:'Dancing Script', cursive;
+        }
+        #main-features a {
+            border: 2px solid rgb(254, 193, 170);
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: rgb(108, 107, 107);
+            font-size: 14px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 15px; /*üstteki yazıyla arası boşluk, bunu yapabilmek için display inline block yaptık*/
+        }
+        #main-features a:hover{
+            background-color: rgb(254, 193, 170);;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .plan {           
+            text-align: center;
+            padding: 5px;
+            width: 33.3%;
+            float: left;
+        }
+
+        .plan__badge {
+            background: #fff;
+            color: coral;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .recommended_plan {
+            color: #fff;
+            background: rgb(77, 109, 81)!important;
+            position: relative;
+            top: -20px;
+        }
+
+        .inner-plan {
+            background: #edf5f7;
+            padding: 25px 10px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24); /*gölgelendirme */
+        }
+        .inner-plan:hover {
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.50); /*üstüne geldiğimizde gölgelendirme koyuldu */
+        }
+
+        .plan__features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .plan__features li {
+            margin: 6px 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .container {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        #backtotop{ /* aşağı inilen sayfayı yukarı çıkartan buton ekledil*/
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        #backtotop span {
+            color: coral;
+           font-size: 40px;
+           transition: color .6s;
+        }
+        #backtotop span:hover {
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body id="body">
+    <header class="main-header">
+            <img src="yesil.png" class="header-logo">
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item"><a href="#">Ana Sayfa</a></li>
+                <li class="main-nav__item"><a href="#">Canlı Bitkiler</a></li>
+                <li class="main-nav__item main-nav__item--login">
+                    <a href="#">Giriş</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="main_title">
+            <h1>Organik Bahçe</h1>
+        </section>
+        <section id="main-welcome">
+            <h2 class="main_aciklama">Hoş geldiniz !</h2>
+            <p class="main_aciklama">Web sitemizde bulunan yüzlerce çeşit çiçek arasından dilediğinizi seçerek İzmir'e çiçek gönderimi yapabilirsiniz. Web sitemizdeki çiçeklerin görselleri kendimize ait olup gönderilen çiçekler maksimum benzerlikte olmaktadır.</p>
+          <div>
+            <div class="col">
+                <span class="material-symbols-outlined icon">
+                    local_shipping
+                    </span>
+                <h3>Aynı Gün Teslimat</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="col">
+                <span class="material-symbols-outlined icon">
+                    favorite
+                    </span>
+                <h3>Güvenli Alışveriş</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique!</p>
+            </div>
+            <div class="col">
+                <span class="material-symbols-outlined icon">
+                    sentiment_satisfied
+                    </span>
+                <h3>%100 Müşteri Memnuniyeti</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            </div>
+          </div>
+        </section>
+        <section id="main-features">
+        <div class="row">
+            <div class="col-2 features-left">
+            </div>
+            <div class="col-2 features-right">
+                <h3>Mutlululuğun Kutusu</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero fugit, voluptas unde a fugiat sunt nisi iusto fuga laboriosam est sapiente amet, quibusdam, iste delectus labore? Id iusto officiis esse!</p>
+                <a href="#">Devamı için tıklayın...</a>
+            </div>
+        </div>
+        </section>
+        <section id="plans">
+            <div class="row">
+                <h2 class="section-title">Become a Premium Member</h2>
+                <div class="container clearfix">
+                    <div class="plan">
+                        <div class="inner-plan">
+                            <h2>Free</h2>
+                            <h3>0/month</h3>
+                            <ul class="plan__features">
+                                <li>HD available</li>
+                                <li>Unlimited Movies and TV shows</li>
+                                <li>Watch on your phone & tablet</li>
+                                <li>Download and watch offline</li>
+                                <li>Screens you can watch</li>
+                                <li>First Month Free</li>
+                            </ul>
+                            <div>
+                                <button class="btn btn-primary">Choose Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plan">
+                        <div class="inner-plan recommended_plan">
+                            <h2 class="plan__badge">Recommended</h2>
+                            <h2>Basic</h2>
+                            <h3>$9.99/month</h3>
+                            <ul class="plan__features">
+                                <li>HD available</li>
+                                <li>Unlimited Movies and TV shows</li>
+                                <li>Watch on your phone & tablet</li>
+                                <li>Download and watch offline</li>
+                                <li>Screens you can watch</li>
+                                <li>First Month Free</li>
+                            </ul>
+                            <div>
+                                <button class="btn btn-primary">Choose Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plan">
+                        <div class="inner-plan">                    
+                            <h2>Premium</h2>
+                            <h3>$19.99/month</h3>
+                            <ul class="plan__features">
+                                <li>HD available</li>
+                                <li>Unlimited Movies and TV shows</li>
+                                <li>Watch on your phone & tablet</li>
+                                <li>Download and watch offline</li>
+                                <li>Screens you can watch</li>
+                                <li>First Month Free</li>
+                            </ul>
+                            <div>
+                                <button class="btn btn-primary">Choose Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <a href="#body" id="backtotop"> <!-- HREF=BODY'YE GİTMESİNİ SAĞLADIK  -->
+        <span class="material-symbols-outlined">
+            keyboard_double_arrow_up
+            </span>
+    </a>
+
+</body>
+</html>

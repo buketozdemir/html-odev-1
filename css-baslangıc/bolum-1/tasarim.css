@@ -1,0 +1,44 @@
+.text-red {
+    color:red;
+}
+.fs-small{
+    font-size: 14px;
+}
+.fs-medium{
+    font-size: 20px;
+}
+.fs-large{  
+    font-size:30px;
+ }
+div[title="deneme"] { /* büyük küçük harf duyarlılığı var, satır 32'de örnek var */
+    background-color: orange;
+}
+a[href ^= "https"] { /* https yazanların rengi değişti */
+    color: palegreen;
+}
+  a[href*="https"][href$="com"] { /* https ile başlayıp com ile bitenlerin rengi turuncu olur */
+    color: orange;
+}
+div[class$="test"] { /* class içerisinde test kelimesi geçenler sarı olur */
+    background: yellow;
+  }
+h1,h2,h3{
+    color:orange;
+}
+p.pembe{ /* p etiketinde classı pembe olanları pembe yapar, 14.satır*/
+    color: rgb(247, 19, 190);
+  }
+a#google:link { /* linke tıklanmadan önceki rengi belirler*/
+    color: red;
+  }
+a.test:hover { /* Mouse üzerine gelince css uygular*/
+    color: red; 
+  }
+  a:active {
+    position: relative;
+    top: 5px;
+  }
+  .container > p.intro + ul > li:first-child { /* conteiner classı içinde paragraf'da ki intro classı ve listedeki ilk eleman */
+    color: orange;
+    }
+  
